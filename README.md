@@ -31,6 +31,7 @@ Now, to run the Jar we are generating the Docker image using the following comma
     "description": "Used to pay for Food by Tomato",
     "type": "DEBIT"
 }'`
+- Note: accountId is an UUID identfier for the User Details, I am not maintaining the user table. So manually assign the accountId for the users. In realtime, accountId is we get from JWT token or from header, if authentication was succesful.
 </br>
 
 *To get the transaction*
