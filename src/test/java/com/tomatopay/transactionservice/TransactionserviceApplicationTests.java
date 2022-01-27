@@ -16,11 +16,10 @@ import java.util.UUID;
 @SpringBootTest
 class TransactionserviceApplicationTests {
 
-    @Autowired
-    TransactionService transactionService;
-
     static UUID[] accountIds;
     static String[] currencies;
+    @Autowired
+    TransactionService transactionService;
 
     @BeforeAll
     static void setup() {
@@ -84,10 +83,8 @@ class TransactionserviceApplicationTests {
 
         Transaction dbTransaction = transactionService.getTransaction(id);
         Assertions.assertEquals("Added", dbTransaction.getDescription());
-
         transaction.setDescription("Updated");
         transactionService.updateTransaction(id, transaction);
-
         dbTransaction = transactionService.getTransaction(id);
         Assertions.assertEquals("Updated", dbTransaction.getDescription());
     }
